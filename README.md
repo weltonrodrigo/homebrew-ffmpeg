@@ -17,7 +17,6 @@ In order to use this tap, you need to install Homebrew or Linuxbrew.
 Then, to run a default installation, run:
 
 ```
-brew tap varenc/ffmpeg
 brew install varenc/ffmpeg/ffmpeg
 ```
 
