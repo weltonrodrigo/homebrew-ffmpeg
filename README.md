@@ -14,13 +14,22 @@ Contents:
 
 In order to use this tap, you need to install Homebrew or Linuxbrew.
 
-Then, to run a default installation, run:
+To use, first tap and pin this repo:
 
 ```
-brew install varenc/ffmpeg/ffmpeg
+brew tap varenc/ffmpeg
+brew tap-pin varenc/ffmpeg
 ```
 
-**Note:** If you already have `ffmpeg` installed from Homebrew core, you will receive an error. You need to first run `brew uninstall ffmpeg` before you can use this tap.
+**Note:** If you already have `ffmpeg` installed from Homebrew core, you need to first run `brew uninstall ffmpeg` before you can use this tap.
+
+### Default installation
+
+To install the default version of the formula, run:
+
+```
+brew install ffmpeg
+```
 
 ### Installing with options
 
@@ -66,6 +75,26 @@ Or, if you are using the `HEAD` version and want to update to the latest commit:
 
 ```
 brew update && brew upgrade ffmpeg --fetch-HEAD
+```
+
+## FAQ
+
+### What is `tap-pin`?
+
+Using `brew tap-pin` gives this tap's `ffmpeg` formula priority over homebrew-core to make installation simpler. Now `ffmpeg` will refer to this tap's formula.
+
+If you don't want to pin this tap, you can still reference this tap's ffmpeg formula directly with `varenc/ffmpeg/ffmpeg`. Tap pinning will not influence an `ffmpeg` dependency in another formula.
+
+To unpin the tap, simply run `brew tap-unpin varenc/ffmpeg`.
+
+### I used the old repository name, what should I do?
+
+This repo was previously named `ffmpeg-with-options`. While there is a redirect to the new repository name, you should update to the tap's new name. To do so, run:
+
+```
+brew untap varenc/ffmpeg-with-options
+brew tap varenc/ffmpeg
+brew tap-pin varenc/ffmpeg
 ```
 
 ## Issues
